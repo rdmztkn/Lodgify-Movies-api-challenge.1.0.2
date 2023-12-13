@@ -1,0 +1,29 @@
+Please add the cURLs of your tests here:
+
+curl --location 'https://localhost:7629/api/showtime' \
+--header 'Content-Type: application/json' \
+--data '{
+    "MovieId": "ID-test1",
+    "SessionDate":"2023-11-25T15:11:00.000",
+    "AuditoriumId": 1
+}'
+
+
+curl --location 'https://localhost:7629/api/reservation' \
+--header 'Content-Type: application/json' \
+--data '{
+    "ShowtimeId": 2,
+    "Seats":[
+        {
+            "Row": 1,
+            "SeatNumber": 1
+        },
+        {
+            "Row": 1,
+            "SeatNumber": 2
+        }
+    ]
+}'
+
+
+curl --location --request POST 'https://localhost:7629/api/reservation/confirm/5578a0da-0b66-4a04-af37-ec218856ab35'

@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "f000d174-7889-420a-af74-dd85e623ecd0",
+		"name": "Lodgify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8773634"
+	},
+	"item": [
+		{
+			"name": "CreateShowtime",
+			"item": [
+				{
+					"name": "https://localhost:7629/api/showtime",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"MovieId\": \"ID-test1\",\r\n    \"SessionDate\":\"2023-11-25T15:11:00.000\",\r\n    \"AuditoriumId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7629/api/showtime",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7629",
+							"path": [
+								"api",
+								"showtime"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CreateReservation",
+			"item": [
+				{
+					"name": "https://localhost:7629/api/reservation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ShowtimeId\": 2,\r\n    \"Seats\":[\r\n        {\r\n            \"Row\": 1,\r\n            \"SeatNumber\": 1\r\n        },\r\n        {\r\n            \"Row\": 1,\r\n            \"SeatNumber\": 2\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7629/api/reservation",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7629",
+							"path": [
+								"api",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConfirmReservation",
+			"item": [
+				{
+					"name": "https://localhost:7629/api/confirm",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ReservationId\": \"f949b7a0-1a5a-40da-8d22-75424d62087b\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7629/api/confirm",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7629",
+							"path": [
+								"api",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
